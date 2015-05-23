@@ -6,5 +6,5 @@ Check the network for friends in "src/main/resources/network.jpg"
 * start your spring boot app: $: mvn spring-boot:run
 
 # hit the urls
-curl http://localhost:8080/user/1
-curl http://localhost:8080/user/1/fof
+* $: curl http://localhost:8080/user/1
+* $: curl http://localhost:8080/user/1/fof
