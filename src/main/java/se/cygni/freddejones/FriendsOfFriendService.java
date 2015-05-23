@@ -27,13 +27,15 @@ public class FriendsOfFriendService {
     }
 
     private List<String> friendOfFriends(String userId) {
-        Set<Set<String>> friendsOfFriends = getFriendsFriends(userId);
+        Set<Set<String>> friendsForClosestFriend = getFriendsFriends(userId);
 
-        Set<String> allFriendOfFriends = new HashSet<>();
-        for (Set<String> membersFriends : friendsOfFriends) {
-            allFriendOfFriends.addAll(membersFriends);
-        }
+        Set<String> allFriendOfFriendsPerUserId = new HashSet<>();
+        friendsForClosestFriend.forEach(allFriendOfFriendsPerUserId::addAll);
 
+        return convertToReadableName(allFriendOfFriendsPerUserId);
+    }
+
+    private List<String> convertToReadableName(Set<String> allFriendOfFriends) {
         return allFriendOfFriends.stream().map(this::getNameByUserId).collect(Collectors.toList());
     }
 
