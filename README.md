@@ -6,6 +6,6 @@
 * start redis server: $: redis-server
 * start your spring boot app: $: mvn spring-boot:run
 
-# hit the urls
+# Hit the urls
 * $: curl http://localhost:8080/user/1
 * $: curl http://localhost:8080/user/1/fof
